@@ -1,3 +1,80 @@
+body {
+  font-family: "Josefin Sans" !important;
+  overflow-x: hidden !important;
+}
+.buttons {
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
+  animation-name: buttonss;
+  display: none !important;
+  transform: translateX(1400px);
+  animation-fill-mode: forwards;
+}
+.inputs {
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
+  animation-name: inputss;
+  animation-fill-mode: forwards;
+  transform: translateX(-1400px);
+  display: flex !important;
+}
+.inputs1 {
+  animation-duration: 0.5s;
+  animation-delay: 6s;
+  animation-name: inputss;
+  animation-fill-mode: forwards;
+  transform: translateX(-1400px);
+  display: flex !important;
+}
+.inputs2 {
+  animation-duration: 0.5s;
+  animation-delay: 13s;
+  animation-name: inputss;
+  animation-fill-mode: forwards;
+  transform: translateX(-1400px);
+  display: flex !important;
+}
+.inputs3 {
+  animation-duration: 0.5s;
+  animation-delay: 22s;
+  animation-name: inputss;
+  animation-fill-mode: forwards;
+  transform: translateX(-1400px);
+  display: flex !important;
+}
+.notif__modal {
+  animation-duration: 0.5s;
+  animation-name: notif__modals;
+  animation-fill-mode: forwards;
+  transform: translateX(300px);
+}
+@keyframes buttonss {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    display: none !important;
+    transform: translateX(1300px);
+  }
+}
+@keyframes inputss {
+  0% {
+    transform: translateX(-1300px);
+  }
+  100% {
+    transform: translateX(0px);
+    display: none !important;
+  }
+}
+@keyframes notif__modals {
+  0% {
+    transform: translateX(300px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
 @import url("https://fonts.googleapis.com/css?family=Poppins:900i");
 
 * {
@@ -19,6 +96,13 @@ body {
 
 .easy {
   
+  display: flex;
+  padding: 10px 45px;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 40px;
+  color: white;
+  background: #6ae916;
   transition: 1s;
   box-shadow: 6px 6px 0 rgb(60, 164, 9);
   transform: skewX(-15deg);
@@ -30,7 +114,7 @@ body {
 
 .easy:hover {
   transition: 0.5s;
-  box-shadow: 10px 10px 0 #fbe738   ;
+  box-shadow: 10px 10px 0 #fbe738;
 }
 
 .easy span:nth-child(2) {
@@ -87,7 +171,7 @@ path.two {
     fill: white;
   }
   50% {
-    fill:#fbd738;
+    fill: #fbd738;
   }
   100% {
     fill: white;

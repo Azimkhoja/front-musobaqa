@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./src/css/output.css" />
+    <link rel="stylesheet" href="../src/css/style.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Box icon -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Word-Genius</title>
+  </head>
+
+  <body class="bg-cover bg-cyan-700 overflow-hidden relative font-['Josefin Sans']">
+    <style>
+      body {
+        background-image: url("./src/images/84501-building-city-particles-pixelated-geometric-squares.png") !important;
+      }
+    </style>
+
+    <div
+      class="justify-center relative z-30 items-center overflow-hidden bg-[#0000007e] backdrop-blur-[6px] flex flex-col gap-24 h-screen w-screen py-16"
+    >
+      <div
+        class="notif__wrapper absolute flex flex-col overflow-hidden right-0 w-[80%] md:w-[30%] h-screen"
+      >
+        <!-- <div
+        class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:mt-2 sm:w-full sm:max-w-lg"
+      >
+        <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+          <div class="sm:flex sm:items-start">
+            <div
+              class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10"
+            >
+              <svg
+                class="h-6 w-6 text-red-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+                />
+              </svg>
+            </div>
+            <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+              <h3
+                class="text-base font-semibold leading-6 text-gray-900"
+                id="modal-title"
+              >
+                Ism kiritmadingiz !!!
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      </div>
+      <h1
+        class="h-[100px] md:h-auto text-center leading-[60px] py-3 text-5xl text-white font-bold typewriter"
+      ></h1>
+      <div
+        class="md:gap-24 z-10 gap-10 big_button flex flex-wrap justify-center"
+      >
+        <div
+          class="flex justify-between w-[260px] rounded-lg items-center h-[55px] duration-300 buttons__wrapper"
+        >
+          <button
+            class="button-36 shadow-md border border-white rounded-lg buttons__wrapper hover:shadow-cyan-500 shadow-white active:text-green-500 active:shadow-green-500 w-full justify-evenly group items-center flex hover:w-[120%] font-bold font-['Lora'] text-2xl hover:text-white hover:bg-transparent bg-white text-cyan-600 duration-700 h-full"
+            role="button"
+          >
+            <p>Boshlash</p>
+            <i class="bx bx-run text-3xl"></i>
+          </button>
+        </div>
+        <div
+          class="flex justify-between w-[260px] rounded-lg items-center h-[55px] duration-300"
+        >
+          <a
+            class="button-36 active:bg-green-500 shadow-md border border-white shadow-cyan-600 rounded-lg active:text-white w-full justify-evenly group items-center flex hover:w-[120%] font-bold font-['Lora'] text-2xl text-white bg-transparent hover:bg-white hover:text-cyan-600 duration-700 h-full"
+            href="./src/pages/about.html"
+          >
+            <p>Biz haqimizda</p>
+            <i class="bx bx-info-circle"></i>
+          </a>
+        </div>
+      </div>
+      <div class="big_input text-lg text-center flex-col hidden">
+        <div
+          class="h-[100px] w-[300px] md:w-auto text-xl mx-auto text-green-500"
+        >
+          <p clas="mb-10 ">
+            Iltimos, Natijalaringiz yozib borishimiz uchun ismingizni kiriting
+          </p>
+        </div>
+        <form class="gap-10 md:gap-12 flex flex-wrap justify-center">
+          <div
+            class="flex btn_cancel justify-between w-[300px] md:w-[220px] rounded-lg items-center h-[55px] duration-300"
+          >
+            <button
+              class="button-36 backdrop-blur-[10px] bg-[#0000007e] active:bg-green-500 shadow-md border border-white shadow-cyan-600 rounded-lg active:text-white w-full justify-evenly group items-center flex hover:w-[120%] font-bold font-['Lora'] text-2xl text-white bg-transparent hover:bg-white hover:text-cyan-600 duration-700 h-full"
+              type="button"
+            >
+              <p>Orqaga</p>
+              <i class="bx bx-reply text-2xl"></i>
+            </button>
+          </div>
+          <input
+            type="text"
+            id="full_name"
+            autocomplete="off"
+            placeholder="Ismingizni kiriting"
+            class="inputValue backdrop-blur-[10px] bg-[#0000007e] h-[55px] w-[300px] bg-transparent border rounded-lg border-white px-3 text-xl text-white"
+          />
+          <div
+            class="flex justify-between w-[300px] md:w-[220px] rounded-lg items-center h-[55px] duration-300 buttons__wrapper"
+          >
+            <button
+              class="button-36 backdrop-blur-[10px] bg-[#0000007e] z-30 shadow-md border border-white rounded-lg buttons__wrapper hover:shadow-cyan-500 shadow-white active:text-green-500 active:shadow-green-500 w-full justify-evenly group items-center flex hover:w-[120%] font-bold font-['Lora'] text-2xl hover:text-white hover:bg-transparent bg-white text-cyan-600 duration-700 h-full"
+              type="submit"
+            >
+              <p class="cursor-pointer">Kiritish</p>
+              <i class="bx bx-edit-alt text-3xl"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div
+        class="big__select justify-between mx-auto w-1/2 hidden flex-col gap-5"
+      >
+        <div class="wrapper easy_btn">
+          <a class="easy" href="#">
+            <span>EASY</span>
+            <span>
+              <svg
+                width="66px"
+                height="43px"
+                viewBox="0 0 66 43"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <g
+                  id="arrow"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <path
+                    class="one"
+                    d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z"
+                    fill="#FFFFFF"
+                  ></path>
+                  <path
+                    class="two"
+                    d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z"
+                    fill="#FFFFFF"
+                  ></path>
+                  <path
+                    class="three"
+                    d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z"
+                    fill="#FFFFFF"
+                  ></path>
+                </g>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        <div class="wrapper medium_btn">
+          <a class="medium" href="#">
+            <span>MEDIUM</span>
+            <span>
+              <svg
+                width="66px"
+                height="43px"
+                viewBox="0 0 66 43"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <g
+                  id="arrow"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <path
+                    class="one"
+                    d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z"
+                    fill="#FFFFFF"
+                  ></path>
+                  <path
+                    class="two"
+                    d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z"
+                    fill="#FFFFFF"
+                  ></path>
+                  <path
+                    class="three"
+                    d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z"
+                    fill="#FFFFFF"
+                  ></path>
+                </g>
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div class="wrapper hard_btn">
+          <a class="hard" href="#">
+            <span>HARD</span>
+            <span>
+              <svg
+                width="66px"
+                height="43px"
+                viewBox="0 0 66 43"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <g
+                  id="arrow"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <path
+                    class="one"
+                    d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z"
+                    fill="#FFFFFF"
+                  ></path>
+                  <path
+                    class="two"
+                    d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z"
+                    fill="#FFFFFF"
+                  ></path>
+                  <path
+                    class="three"
+                    d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z"
+                    fill="#FFFFFF"
+                  ></path>
+                </g>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script>
+      let inputValue;
+      let j = 1;
+      function type() {
+        var i = 0;
+        var txt = "Word-Genius o'yiniga xush kelibsiz !!!";
+        var txt2 = "Welcome to Word-Genius game !!!";
+        var speed = 70;
+
+        document.querySelector(".typewriter").innerHTML = "";
+        function typeWriter() {
+          if (i < txt.length) {
+            document.querySelector(".typewriter").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+          }
+        }
+        function typeWriter2() {
+          if (i < txt2.length) {
+            document.querySelector(".typewriter").innerHTML += txt2.charAt(i);
+            i++;
+            setTimeout(typeWriter2, speed);
+          }
+        }
+        if (j % 2) {
+          typeWriter();
+        } else {
+          typeWriter2();
+        }
+        j++;
+      }
+      type();
+      setInterval(type, 3500);
+
+      document.querySelector(".easy_btn").addEventListener("click", () => {
+        localStorage.setItem("type", "easy");
+        window.location.replace("/");
+      });
+      document.querySelector(".medium_btn").addEventListener("click", () => {
+        localStorage.setItem("type", "medium");
+        window.location.replace("/");
+      });
+      document.querySelector(".hard_btn").addEventListener("click", () => {
+        localStorage.setItem("type", "hard");
+        window.location.replace("/");
+      });
+
+      document
+        .querySelector(".buttons__wrapper")
+        .addEventListener("click", (e) => {
+          if (!localStorage.getItem("name")) {
+            document.querySelector(".big_button").classList.remove("inputs");
+            document.querySelector(".big_button").classList.add("buttons");
+            document.querySelector(".big_input").classList.remove("buttons");
+            document.querySelector(".big_input").classList.add("inputs");
+          } else {
+            document.querySelector(".big_button").classList.remove("inputs");
+            document.querySelector(".big_button").classList.add("buttons");
+            document.querySelector(".big__select").classList.remove("buttons");
+            document.querySelector(".big__select").classList.add("inputs");
+          }
+        });
+
+      document.querySelector(".btn_cancel").addEventListener("click", () => {
+        document.querySelector(".big_input").classList.remove("inputs");
+        document.querySelector(".big_input").classList.add("buttons");
+        document.querySelector(".big_button").classList.remove("buttons");
+        document.querySelector(".big_button").classList.add("inputs");
+      });
+
+      document.querySelector(".inputValue").addEventListener("input", (e) => {
+        inputValue = e.target.value;
+      });
+      const createElement = (tagName, className, content) => {
+        const element = document.createElement(tagName);
+        if (className) element.setAttribute("class", className);
+        if (content) element.innerHTML = content;
+        return element;
+      };
+
+      document.querySelector("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (!inputValue) {
+          const el = createElement(
+            "div",
+            "relative notif__modal transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:mt-2 sm:w-full sm:max-w-lg",
+            `<div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+          <div class="sm:flex sm:items-start">
+            <div
+              class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10"
+            >
+              <svg
+                class="h-6 w-6 text-red-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+                />
+              </svg>
+            </div>
+            <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+              <h3
+                class="text-base font-semibold leading-6 text-gray-900"
+                id="modal-title"
+              >
+                Ism kiritmadingiz !!!
+              </h3>
+            </div>
+          </div>
+        </div>`
+          );
+          document.querySelector(".notif__wrapper").append(el);
+          setTimeout(() => {
+            document
+              .querySelector(".notif__wrapper")
+              .removeChild(document.querySelectorAll(".notif__modal")[0]);
+          }, 2000);
+          return console.log("errorcha");
+        }
+        localStorage.setItem("name", inputValue);
+        document.querySelector(".big_input").classList.remove("inputs");
+        document.querySelector(".big_input").classList.add("buttons");
+        document.querySelector(".big__select").classList.remove("buttons");
+        document.querySelector(".big__select").classList.add("inputs");
+      });
+    </script>
+  </body>
+</html>

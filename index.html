@@ -316,15 +316,15 @@
 
       document.querySelector(".easy_btn").addEventListener("click", () => {
         localStorage.setItem("type", "easy");
-        window.location.replace("/");
+        window.location.assign("./pages/task.html");
       });
       document.querySelector(".medium_btn").addEventListener("click", () => {
         localStorage.setItem("type", "medium");
-        window.location.replace("/");
+        window.location.assign("./pages/task.html");
       });
       document.querySelector(".hard_btn").addEventListener("click", () => {
         localStorage.setItem("type", "hard");
-        window.location.replace("/");
+        window.location.assign("./pages/task.html");
       });
 
       document

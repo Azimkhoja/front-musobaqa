@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Task</title>
+    <!-- box-icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- tailwindcss -->
+    <link rel="stylesheet" href="../css/output.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- aos library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Modal -->
+    <div
+      class="modal w-screen h-screen bg-[#000000b1] fixed top-0 left-0 z-50 hidden"
+      id="modal"
+    >
+      <div
+        class="w-[400px] mt-[150px] bg-white rounded-md p-4 mx-auto text-center"
+        id="modal-content"
+      >
+        <h2 class="text-2xl mb-2">Vaqtingiz tugadi!</h2>
+        <p class="mb-6 font-bold">
+          To'g'ri javoblar soni: <span id="res"></span>
+        </p>
+        <button
+          class="py-2 px-3 rounded-md text-white bg-green-600"
+          id="closeModal"
+        >
+          Qayta boshlash
+        </button>
+        <a href="#" class="py-2 px-3 rounded-md text-white bg-red-500 ml-[2px]">
+          Dasturdan chiqish
+        </a>
+      </div>
+    </div>
+
+    <!-- Main -->
+    <main class="main w-screen h-screen bg-gray-100 flex">
+      <div class="main__right w-[78%] h-full p-8">
+        <div
+          class="content-area bg-[#00C373] w-full h-[85%] rounded-t-md relative overflow-hidden"
+        ></div>
+        <div
+          class="h-[15%] flex items-center justify-center bg-[#1b9c66] rounded-b-md"
+        >
+          <button
+            id="generate-btn"
+            class="py-2 px-6 bg-green-800 rounded-md text-white inline-block"
+          >
+            Random
+          </button>
+        </div>
+      </div>
+      <div class="main__left w-[22%] h-full bg-gray-200 p-8">
+        <h1 class="text-2xl uppercase font-bold mb-4 text-blue-600">
+          About you:
+        </h1>
+        <p class="text-lg mb-2">
+          <span class="font-bold">Your name:</span> Azimjon
+        </p>
+        <p class="text-lg mb-2">
+          <span class="font-bold">Your level: </span> easy
+        </p>
+        <ul class="main__left--result mt-8">
+          <li class="mb-4">
+            <span class="py-1 px-2 bg-green-600 text-white rounded-md"
+              >Correct 😊:</span
+            >
+            <span class="result py-1 px-2 text-green-600 font-bold text-lg"
+              >0</span
+            >
+          </li>
+        </ul>
+        <p class="text-lg mt-8">
+          <span class="font-bold">Time: </span> <span id="clock">30</span>s
+        </p>
+      </div>
+    </main>
+
+    <!-- script files -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="../words/easy.js"></script>
+    <script src="../words/medium.js"></script>
+    <script src="../script/positions.js"></script>
+    <script src="../script/task.js"></script>
+  </body>
+</html>

@@ -11,6 +11,10 @@ const medium = {
         belong:9,
         benefit:10,
         blow:11,
+        brake:12,
+        brave:13,
+        bunch:14,
+        bored:15,
         
     }
 }

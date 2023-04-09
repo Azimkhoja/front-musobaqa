@@ -101,6 +101,8 @@ body {
   text-decoration: none;
   font-family: "Poppins", sans-serif !important;
   font-size: 40px;
+  font-weight: bold;
+  font-style: italic;
   color: white;
   background: #6ae916;
   transition: 1s;
@@ -178,7 +180,14 @@ path.two {
   }
 }
 .medium {
- 
+  display: flex;
+  padding: 10px 45px;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  background: #227aef;
   transition: 1s;
   box-shadow: 6px 6px 0 rgb(16, 60, 217);
   transform: skewX(-15deg);
@@ -254,6 +263,14 @@ path.two {
   }
 }
 .hard {
+  display: flex;
+  padding: 10px 45px;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  background: #f02922;
   transition: 1s;
   box-shadow: 6px 6px 0 rgb(148, 3, 3);
   transform: skewX(-15deg);

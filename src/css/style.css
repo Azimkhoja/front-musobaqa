@@ -1,0 +1,35 @@
+.buttons {
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
+  animation-name: buttonss;
+  display: none !important;
+  transform: translateX(1400px);
+  animation-fill-mode: forwards;
+}
+.inputs {
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
+  animation-name: inputss;
+  animation-fill-mode: forwards;
+  transform: translateX(-1400px);
+  display: flex !important;
+}
+
+@keyframes buttonss {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    display: none !important;
+    transform: translateX(1300px);
+  }
+}
+@keyframes inputss {
+  0% {
+    transform: translateX(-1300px);
+  }
+  100% {
+    transform: translateX(0px);
+    display: none !important;
+  }
+}

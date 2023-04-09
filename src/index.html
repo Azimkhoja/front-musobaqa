@@ -1,15 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./css/output.css">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/output.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Box icon -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
     <title>front musobaqa</title>
-</head>
-<body>
-    
-</body>
+  </head>
+
+  <body class="bg-cover bg-cyan-700">
+    <style>
+      body {
+        background-image: url("./images/84501-building-city-particles-pixelated-geometric-squares.png") !important;
+      }
+    </style>
+
+    <div
+      class="justify-center items-center overflow-hidden bg-[#0000007e] backdrop-blur-[6px] flex flex-col gap-32 h-screen w-screen py-16"
+    >
+      <h1
+        class="font-['Lora'] py-3 text-5xl text-white font-bold typewriter"
+      ></h1>
+      <div class="gap-24 big_button flex">
+        <div
+          class="flex justify-between w-[220px] rounded-lg items-center h-[55px] duration-300 buttons__wrapper"
+        >
+          <button
+            class="button-36 shadow-md border border-white rounded-lg buttons__wrapper hover:shadow-cyan-500 shadow-white active:text-green-500 active:shadow-green-500 w-full justify-evenly group items-center flex hover:w-[120%] font-bold font-['Lora'] text-2xl hover:text-white hover:bg-transparent bg-white text-cyan-600 duration-700 h-full"
+            role="button"
+          >
+            <p>Boshlash</p>
+            <i class="bx bx-run text-3xl"></i>
+          </button>
+        </div>
+        <div
+          class="flex justify-between w-[260px] rounded-lg items-center h-[55px] duration-300"
+        >
+          <button
+            class="button-36 active:bg-green-500 shadow-md border border-white shadow-cyan-600 rounded-lg active:text-white w-full justify-evenly group items-center flex hover:w-[120%] font-bold font-['Lora'] text-2xl text-white bg-transparent hover:bg-white hover:text-cyan-600 duration-700 h-full"
+            role="button"
+          >
+            <p>Biz haqimizda</p>
+            <i class="bx bx-info-circle"></i>
+          </button>
+        </div>
+      </div>
+      <form class="gap-12 big_input hidden">
+        <div
+          class="flex btn_cancel justify-between w-[160px] rounded-lg items-center h-[55px] duration-300"
+        >
+          <button
+            class="button-36 active:bg-green-500 shadow-md border border-white shadow-cyan-600 rounded-lg active:text-white w-full justify-evenly group items-center flex hover:w-[120%] font-bold font-['Lora'] text-2xl text-white bg-transparent hover:bg-white hover:text-cyan-600 duration-700 h-full"
+            type="button"
+          >
+            <p>Orqaga</p>
+            <i class="bx bx-info-circle"></i>
+          </button>
+        </div>
+        <input
+          type="text"
+          id="full_name"
+          autocomplete="off"
+          placeholder="Ismingizni kiriting"
+          class="inputValue h-[55px] w-[400px] bg-transparent border rounded-lg border-white px-3 text-xl text-white"
+        />
+        <div
+          class="flex justify-between w-[220px] rounded-lg items-center h-[55px] duration-300 buttons__wrapper"
+        >
+          <button
+            class="button-36 shadow-md border border-white rounded-lg buttons__wrapper hover:shadow-cyan-500 shadow-white active:text-green-500 active:shadow-green-500 w-full justify-evenly group items-center flex hover:w-[120%] font-bold font-['Lora'] text-2xl hover:text-white hover:bg-transparent bg-white text-cyan-600 duration-700 h-full"
+            type="submit"
+          >
+            <p>Kiritish</p>
+            <i class="bx bx-edit-alt text-3xl"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+    <script>
+      let inputValue;
+      let j = 1;
+      function type() {
+        var i = 0;
+        var txt = "Word-Genius o'yiniga xush kelibsiz !!!";
+        var txt2 = "Welcome to Word-Genius game !!!";
+        var speed = 70;
+
+        document.querySelector(".typewriter").innerHTML = "";
+        function typeWriter() {
+          if (i < txt.length) {
+            document.querySelector(".typewriter").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+          }
+        }
+        function typeWriter2() {
+          if (i < txt2.length) {
+            document.querySelector(".typewriter").innerHTML += txt2.charAt(i);
+            i++;
+            setTimeout(typeWriter2, speed);
+          }
+        }
+        if (j % 2) {
+          typeWriter();
+        } else {
+          typeWriter2();
+        }
+        j++;
+      }
+      type();
+      // setInterval(type, 3500);
+
+      document
+        .querySelector(".buttons__wrapper")
+        .addEventListener("click", (e) => {
+          if (!localStorage.getItem("name")) {
+            document.querySelector(".big_button").classList.remove("inputs");
+            document.querySelector(".big_button").classList.add("buttons");
+            document.querySelector(".big_input").classList.remove("buttons");
+            document.querySelector(".big_input").classList.add("inputs");
+          }
+        });
+
+      document.querySelector(".btn_cancel").addEventListener("click", () => {
+        document.querySelector(".big_input").classList.remove("inputs");
+        document.querySelector(".big_input").classList.add("buttons");
+        document.querySelector(".big_button").classList.remove("buttons");
+        document.querySelector(".big_button").classList.add("inputs");
+      });
+
+      document.querySelector(".inputValue").addEventListener("input", (e) => {
+        inputValue = e.target.value;
+      });
+
+      document.querySelector("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (!inputValue) {
+          return console.log("errorcha");
+        }
+        localStorage.setItem("name", inputValue);
+        document.querySelector(".big_input").classList.remove("inputs");
+        document.querySelector(".big_input").classList.add("buttons");
+      });
+    </script>
+  </body>
 </html>

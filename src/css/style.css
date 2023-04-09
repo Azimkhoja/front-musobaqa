@@ -1,6 +1,7 @@
 body {
   font-family: "Josefin Sans" !important;
   overflow-x: hidden !important;
+  display: scroll-behavior;
 }
 .buttons {
   animation-duration: 0.5s;

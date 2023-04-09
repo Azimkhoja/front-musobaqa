@@ -24,51 +24,87 @@
       id="modal"
     >
       <div
-        class="w-[400px] mt-[150px] bg-white rounded-md p-4 mx-auto text-center"
+        class="w-[90%] sm:w-[400px] mt-[150px] bg-white rounded-md p-4 mx-auto text-center"
         id="modal-content"
       >
-        <h2 class="text-2xl mb-2">Vaqtingiz tugadi!</h2>
+        <h2 class="text-xl sm:text-2xl mb-2">Vaqtingiz tugadi!</h2>
         <p class="mb-6 font-bold">
           To'g'ri javoblar soni: <span id="res"></span>
         </p>
         <button
-          class="py-2 px-3 rounded-md text-white bg-green-600"
+          class="py-1 px-2 sm:py-2 sm:px-3 rounded-md text-white bg-green-600"
           id="closeModal"
         >
           Qayta boshlash
         </button>
-        <a href="#" class="py-2 px-3 rounded-md text-white bg-red-500 ml-[2px]">
+        <a
+          href="#"
+          class="py-1 px-2 sm:py-2 sm:px-3 rounded-md text-white bg-red-500 ml-[2px]"
+        >
           Dasturdan chiqish
         </a>
       </div>
     </div>
 
     <!-- Main -->
-    <main class="main w-screen h-screen bg-gray-100 flex">
-      <div class="main__right w-[78%] h-full p-8">
+    <main class="main w-screen h-screen bg-gray-100 flex relative">
+      <div class="main__right w-full lg:w-[78%] h-full p-2 sm:p-4 lg:p-8">
         <div
-          class="content-area bg-[#00C373] w-full h-[85%] rounded-t-md relative overflow-hidden"
+          class="content-area bg-[#00C373] w-full h-1/2 sm:h-[85%] rounded-t-md relative overflow-hidden"
         ></div>
         <div
-          class="h-[15%] flex items-center justify-center bg-[#1b9c66] rounded-b-md"
+          class="h-1/2 sm:h-[15%] flex flex-col sm:flex-row items-center justify-center bg-[#1b9c66] rounded-b-md"
         >
           <button
             id="generate-btn"
-            class="py-2 px-6 bg-green-800 rounded-md text-white inline-block"
+            class="py-2 px-6 bg-green-800 rounded-md text-white inline-block mb-4 sm:mb-0"
           >
             Random
           </button>
+          <div
+            class="w-[70%] bg-[#00c372d3] p-3 rounded-md text-center sm:hidden"
+          >
+            <h1 class="text-2xl uppercase font-bold mb-4 text-white">
+              About you:
+            </h1>
+            <p class="text-lg mb-2">
+              <span class="font-bold">Your name:</span>
+              <span class="username capitalize">Azimjon</span>
+            </p>
+            <p class="text-lg mb-2">
+              <span class="font-bold">Your level: </span>
+              <span class="level capitalize">Easy</span>
+            </p>
+            <ul class="main__left--result mt-8">
+              <li class="mb-4">
+                <span class="py-1 px-2 bg-green-600 text-white rounded-md"
+                  >Correct 😊:</span
+                >
+                <span class="result py-1 px-2 text-white-600 font-bold text-lg"
+                  >0</span
+                >
+              </li>
+              <p class="text-lg mt-8">
+                <span class="font-bold">Time: </span>
+                <span class="clock">30</span>s
+              </p>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="main__left w-[22%] h-full bg-gray-200 p-8">
+      <div
+        class="main__left w-1/2 lg:w-[22%] h-screen lg:h-full bg-gray-200 p-8 absolute -right-full top-0 z-10 lg:static"
+      >
         <h1 class="text-2xl uppercase font-bold mb-4 text-blue-600">
           About you:
         </h1>
         <p class="text-lg mb-2">
-          <span class="font-bold">Your name:</span> Azimjon
+          <span class="font-bold">Your name:</span>
+          <span id="" class="username capitalize">Azimjon</span>
         </p>
         <p class="text-lg mb-2">
-          <span class="font-bold">Your level: </span> easy
+          <span class="font-bold">Your level: </span>
+          <span id="" class="level capitalize">Easy</span>
         </p>
         <ul class="main__left--result mt-8">
           <li class="mb-4">
@@ -81,7 +117,7 @@
           </li>
         </ul>
         <p class="text-lg mt-8">
-          <span class="font-bold">Time: </span> <span id="clock">30</span>s
+          <span class="font-bold">Time: </span> <span class="clock">30</span>s
         </p>
       </div>
     </main>

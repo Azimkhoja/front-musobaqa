@@ -4,6 +4,10 @@ const btnsArea = document.querySelector(".content-area");
 const generate = document.querySelector("#generate-btn");
 
 const degree = localStorage.getItem("type");
+document.querySelector(".level").innerText = degree || "easy";
+const username = localStorage.getItem("name");
+document.querySelector(".username").innerText = username || "user";
+
 let enData;
 let uzData;
 if (degree === "hard") {
@@ -59,10 +63,123 @@ function randomBtns(uz, en) {
   return btns;
 }
 
+var secons = 30;
+var modal = document.querySelector("#modal");
+const modalContent = document.querySelector("#modal-content");
+function countClock() {
+  secons--;
+  const clockElm = document.querySelectorAll(".clock");
+  clockElm[0].innerText = secons;
+  clockElm[1].innerText = secons;
+  if (secons == 0) {
+    clearInterval(timer);
+    modal.classList.remove("hidden");
+    const res = document.querySelector("#res");
+    res.innerText = correctAswer;
+  }
+}
+
+let timer = setInterval(countClock, 1000);
+function restart() {
+  secons = 31;
+  clearInterval(timer);
+  modal.classList.add("hidden");
+  timer = setInterval(countClock, 1000);
+}
+const closeModalBtn = document.querySelector("#closeModal");
+closeModalBtn?.addEventListener("click", restart);
+
+function showBtns() {
+  const btns = randomBtns(uzData, enData);
+  for (let i = 0; i < btns.en.length; i++) {
+    const uzBtnPos1 = "top-[" + btns.uzPos[i].top + "]";
+    const uzBtnPos2 = "left-[" + btns.uzPos[i].left + "]";
+
+    const btnElement = document.createElement("button");
+    btnElement.classList.add(
+      "-translate-x-1/2",
+      "uzbek",
+      "lg:w-[150px]",
+      "sm:pt-[10px]",
+      "sm:pb-[12px]",
+      "sm:px-5",
+      "px-[4px]",
+      "duration-200",
+      "hover:bg-red-400",
+      "hover:text-white",
+      "bg-red-200",
+      "text-orange-500",
+      "lg:text-2xl",
+      "mb-1",
+      "inline-block",
+      "rounded-md",
+      "absolute",
+      "font-bold",
+      "rounded-md",
+      "sm:w-[120px]",
+      "w-[60px]",
+      "sm:text-xs",
+      "pt-[2px]",
+      "pb-[2px]",
+      "overflow-hidden",
+      uzBtnPos1,
+      uzBtnPos2
+    );
+    btnElement.innerHTML = btns.uz[i];
+    btnsArea.appendChild(btnElement);
+  }
+
+  for (let i = 0; i < btns.en.length; i++) {
+    const enBtnPos1 = "top-[" + btns.enPos[i].top + "]";
+    const enBtnPos2 = "left-[" + btns.enPos[i].left + "]";
+
+    const btnElement = document.createElement("button");
+    btnElement.classList.add(
+      "-translate-x-1/2",
+      "english",
+      "sm:pt-[10px]",
+      "sm:pb-[12px]",
+      "sm:px-5",
+      "px-[4px]",
+      "duration-200",
+      "hover:bg-[#9DE4C8]",
+      "hover:text-white",
+      "text-orange-500",
+      "bg-[#D7E9E1]",
+      "mb-1",
+      "inline-block",
+      "rounded-md",
+      "absolute",
+      "font-bold",
+      "rounded-md",
+      "lg:text-2xl",
+      "sm:text-lg",
+      "lg:w-[150px]",
+      "sm:w-[120px]",
+      "w-[60px]",
+      "sm:text-xs",
+      "pt-[2px]",
+      "pb-[2px]",
+      "overflow-hidden",
+      enBtnPos1,
+      enBtnPos2
+    );
+    btnElement.innerHTML = btns.en[i];
+    btnsArea.appendChild(btnElement);
+  }
+  restart();
+}
+showBtns();
+
+generate.addEventListener("click", function () {
+  btnsArea.innerHTML = "";
+  showBtns();
+});
+
 // Select Words
 const eng = document.querySelectorAll(".english");
 const uzb = document.querySelectorAll(".uzbek");
-const result = document.querySelector(".result");
+const result = document.querySelectorAll(".result");
 let engValue;
 let uzbValue;
 let correctAswer = 0;
@@ -86,7 +203,8 @@ eng.forEach((item) => {
       );
       uzbValue = null;
       correctAswer++;
-      result.innerText = correctAswer;
+      result[0].innerText = correctAswer;
+      result[1].innerText = correctAswer;
     } else {
       localStorage.setItem("enWord", keyWord);
       engValue = this;
@@ -120,7 +238,8 @@ uzb.forEach((item) => {
       );
       engValue = null;
       correctAswer++;
-      result.innerText = correctAswer;
+      result[0].innerText = correctAswer;
+      result[1].innerText = correctAswer;
     } else {
       uzbValue = this;
       localStorage.setItem("uzWord", keyWord);
@@ -132,99 +251,4 @@ uzb.forEach((item) => {
       this.classList.remove("bg-red-200", "text-orange-500");
     }
   });
-});
-
-var secons = 30;
-var modal = document.querySelector("#modal");
-const modalContent = document.querySelector("#modal-content");
-function countClock() {
-  secons--;
-  document.querySelector("#clock").innerText = secons;
-  if (secons == 0) {
-    clearInterval(timer);
-    modal.classList.remove("hidden");
-    const res = document.querySelector("#res");
-    res.innerText = correctAswer;
-  }
-}
-
-let timer = setInterval(countClock, 1000);
-function restart() {
-  secons = 31;
-  clearInterval(timer);
-  modal.classList.add("hidden");
-  timer = setInterval(countClock, 1000);
-}
-const closeModalBtn = document.querySelector("#closeModal");
-closeModalBtn?.addEventListener("click", restart);
-
-function showBtns() {
-  const btns = randomBtns(uzData, enData);
-  for (let i = 0; i < btns.en.length; i++) {
-    const uzBtnPos1 = "top-[" + btns.uzPos[i].top + "]";
-    const uzBtnPos2 = "left-[" + btns.uzPos[i].left + "]";
-
-    const btnElement = document.createElement("button");
-    btnElement.classList.add(
-      "-translate-x-1/2",
-      "uzbek",
-      "w-[150px]",
-      "pt-[10px]",
-      "pb-[12px]",
-      "px-5",
-      "duration-200",
-      "hover:bg-red-400",
-      "hover:text-white",
-      "bg-red-200",
-      "text-orange-500",
-      "text-2xl",
-      "mb-1",
-      "inline-block",
-      "rounded-md",
-      "absolute",
-      "font-bold",
-      "rounded-md",
-      uzBtnPos1,
-      uzBtnPos2
-    );
-    btnElement.innerHTML = btns.uz[i];
-    btnsArea.appendChild(btnElement);
-  }
-
-  for (let i = 0; i < btns.en.length; i++) {
-    const enBtnPos1 = "top-[" + btns.enPos[i].top + "]";
-    const enBtnPos2 = "left-[" + btns.enPos[i].left + "]";
-
-    const btnElement = document.createElement("button");
-    btnElement.classList.add(
-      "-translate-x-1/2",
-      "english",
-      "w-[150px]",
-      "pt-[10px]",
-      "pb-[12px]",
-      "duration-200",
-      "hover:bg-[#9DE4C8]",
-      "hover:text-white",
-      "text-orange-500",
-      "text-2xl",
-      "bg-[#D7E9E1]",
-      "mb-1",
-      "inline-block",
-      "rounded-md",
-      "absolute",
-      "font-bold",
-      "rounded-md",
-      enBtnPos1,
-      enBtnPos2
-    );
-    btnElement.innerHTML = btns.en[i];
-    btnsArea.appendChild(btnElement);
-  }
-  restart();
-}
-showBtns();
-
-generate.addEventListener("click", function () {
-  btnsArea.innerHTML = "";
-  showBtns();
 });

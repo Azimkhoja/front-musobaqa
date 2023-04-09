@@ -1,3 +1,7 @@
+body {
+  font-family: "Josefin Sans" !important;
+  overflow-x: hidden !important;
+}
 .buttons {
   animation-duration: 0.5s;
   animation-delay: 0.5s;
@@ -14,7 +18,36 @@
   transform: translateX(-1400px);
   display: flex !important;
 }
-
+.inputs1 {
+  animation-duration: 0.5s;
+  animation-delay: 6s;
+  animation-name: inputss;
+  animation-fill-mode: forwards;
+  transform: translateX(-1400px);
+  display: flex !important;
+}
+.inputs2 {
+  animation-duration: 0.5s;
+  animation-delay: 13s;
+  animation-name: inputss;
+  animation-fill-mode: forwards;
+  transform: translateX(-1400px);
+  display: flex !important;
+}
+.inputs3 {
+  animation-duration: 0.5s;
+  animation-delay: 22s;
+  animation-name: inputss;
+  animation-fill-mode: forwards;
+  transform: translateX(-1400px);
+  display: flex !important;
+}
+.notif__modal {
+  animation-duration: 0.5s;
+  animation-name: notif__modals;
+  animation-fill-mode: forwards;
+  transform: translateX(300px);
+}
 @keyframes buttonss {
   0% {
     transform: translateX(0px);
@@ -33,17 +66,19 @@
     display: none !important;
   }
 }
+@keyframes notif__modals {
+  0% {
+    transform: translateX(300px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
 @import url("https://fonts.googleapis.com/css?family=Poppins:900i");
 
 * {
   box-sizing: border-box;
-}
-
-body {
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.35);
-  font-family: "Poppins", Helvetica, Arial;
-  align-items: center;
 }
 
 .wrapper {
@@ -55,7 +90,7 @@ body {
   display: flex;
   padding: 10px 45px;
   text-decoration: none;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif !important;
   font-size: 40px;
   color: white;
   background: #6ae916;
